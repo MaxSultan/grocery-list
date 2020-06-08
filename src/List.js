@@ -3,7 +3,7 @@ import Grocery from './Grocery'
 
 const List = (props) => (
   <div>
-    <h2>{props.name}</h2>
+    <h1 className='title'>{props.name}</h1>
     <ul>
       { props.groceries.map( (i) => (
         <Grocery
@@ -12,6 +12,7 @@ const List = (props) => (
          id={i.id}
          complete={i.complete}
          itemClick={props.itemClick}
+         deleteItem={props.deleteItem}
          />
       ))}
     </ul>

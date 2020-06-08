@@ -1,38 +1,59 @@
-.App {
-  text-align: center;
+:root {
+  --primary: #5085A5;
+  --primary-dark: #31708E;
+  --primary-light: #8FC1E3;
+  --accent-dark: #687864;
+  --accent-light: #F7F9FB;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  background-color: var(--accent-light);
+  color: var(--primary-dark);
+} 
+
+li{
+  list-style: square;
+  font-size: 1.5rem;
+  margin-top: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button{
+  background-color: var(--primary);
+  color: var(--accent-light);
+  font-size: .75rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  color: var(--primary);
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.title {
+  background-color: var(accent-dark);
+}
+
+.additem{
+  margin-left: 25px;
+}
+
+.border{
+  max-width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+  border: 5px solid var(--primary);
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 20px; 
 }
 
-.App-link {
-  color: #61dafb;
+.submit-btn{
+  background-color: var(--accent-dark);
+  margin-left: 10px;
+  font-size: .75rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+

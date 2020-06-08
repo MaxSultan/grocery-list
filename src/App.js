@@ -10,8 +10,21 @@ class App extends React.Component {
       {id: 1, name: "cheese", complete: false },
       {id: 2, name: "chocolate", complete: true },
       {id: 3, name: "bread", complete: false },
-    ]
+    ],
+    filter: "All",
   };
+
+  filterGroceries = () => {
+    const {groceries, filter} = this.state
+    switch(filter){
+      case 'Active':
+        return groceries.filter( (g) => !g.complete)
+      case 'Complete':
+        return groceries.filter( (g) => g.complete)
+      default:
+        return groceries
+    }
+  }
 
   handleClick = (id) => {
     const { groceries } = this.state;
@@ -22,6 +35,14 @@ class App extends React.Component {
       this.setState({
         groceries: newItems,
     })
+  };
+
+  removeItem = (id) => {
+    const { groceries } = this.state;
+    const filtered = groceries.filter(item => item.id !== id);
+    this.setState({
+      groceries: filtered,
+    }); 
   };
 
   addItem = (itemName) => {
@@ -42,12 +63,15 @@ class App extends React.Component {
     return (
       <div>
         <ul>
-          <Form addItem={this.addItem} />
+        
           <List 
             itemClick={this.handleClick}
             name="Grocery List" 
             groceries={groceries}
+            deleteItem={this.removeItem}
           />
+          <br/>
+            <Form addItem={this.addItem} />
         </ul>
       </div>
     );

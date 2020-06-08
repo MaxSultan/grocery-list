@@ -1,12 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-const Grocery = ({ id, name, complete, itemClick }) => (
+const Grocery = ({ id, name, complete, itemClick, deleteItem }) => (
+  <>
   <li 
     style={ complete ? { ...styles.item, ...styles.complete } : styles.item }
-    onClick={ () => itemClick(id) }
+    onClick={ () => itemClick(id)}
   >
     { name }
+
+   
   </li>
+   <div><button onClick={() => deleteItem(id)}>delete</button></div>
+</>
 );
 
 const styles = {

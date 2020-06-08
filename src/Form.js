@@ -18,14 +18,14 @@ class Form extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <input 
+        <input className='additem'
           value={itemName}
           name="itemName"
           onChange={this.handleChange}
           required 
           placeholder="Add an Item" 
           />
-        <button type="submit">submit</button>
+        <button type="submit" className='submit-btn'>submit</button>
       </form>
     );
   }
