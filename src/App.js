@@ -7,9 +7,11 @@ import Grocery from './Grocery';
 class App extends React.Component {
   state = {
     groceries: [
-      {id: 1, name: "cheese", complete: false },
-      {id: 2, name: "chocolate", complete: true },
-      {id: 3, name: "bread", complete: false },
+      {id: 1, name: "bread", complete: false },
+      {id: 2, name: "cheese", complete: true },
+      {id: 3, name: "chocolate", complete: false },
+      {id: 4, name: "eggs", complete: false },
+      {id: 5, name: "milk", complete: false },
     ],
     filter: "All",
   };
